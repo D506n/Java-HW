@@ -23,9 +23,9 @@ public class Main {
         }
 
         int minRAM = 1;
-        int minHdd = 1;
-        String userOs = "0";
-        String userColour = "0";
+        int minHDD = 1;
+        String userOS = "0";
+        String userColor = "0";
 
         int d = 0;
         while (d == 0) {
@@ -65,9 +65,9 @@ public class Main {
                         }
                         String userHdd = sc.nextLine();
                         try {
-                            minHdd = Integer.parseInt(userHdd);
-                            if (minHdd < 1 || minHdd > hddMap.size()) {
-                                minHdd = 1;
+                            minHDD = Integer.parseInt(userHdd);
+                            if (minHDD < 1 || minHDD > hddMap.size()) {
+                                minHDD = 1;
                                 System.out.println("Введено некорректное значение.");
                             }
                         } catch (NumberFormatException ex) {
@@ -87,7 +87,7 @@ public class Main {
                                 choiceOs = 1;
                                 System.out.println("Введено некорректное значение.");
                             } else
-                                userOs = osMap.get(choiceOs);
+                                userOS = osMap.get(choiceOs);
                         } catch (NumberFormatException ex) {
                             System.out.println("Пожалуйста, введите число.");
                         }
@@ -105,7 +105,7 @@ public class Main {
                                 choiceColour = 1;
                                 System.out.println("Введено некорректное значение.");
                             } else
-                                userColour = colorsMap.get(choiceColour);
+                                userColor = colorsMap.get(choiceColour);
                         } catch (NumberFormatException ex) {
                             System.out.println("Пожалуйста, введите число.");
                         }
@@ -124,9 +124,9 @@ public class Main {
             }
         }
         for (Notebook book : allNotebooks) {
-            if (ramMap.get(minRAM) <= book.ram && hddMap.get(minHdd) <= book.hdd
-                    && (userOs.equals("0") || book.os.equals(userOs))
-                    && (userColour.equals("0") || book.color.equals(userColour))) {
+            if (ramMap.get(minRAM) <= book.ram && hddMap.get(minHDD) <= book.hdd
+                    && (userOS.equals("0") || book.os.equals(userOS))
+                    && (userColor.equals("0") || book.color.equals(userColor))) {
                 d = 2;
                 System.out.println(book);
             }
